@@ -9,7 +9,7 @@ import MovieList from '../components/movie-list/movie-list.component';
 import Footer from '../components/footer/footer';
 
 // ---------- data ------------------
-import { getMovies } from './data/movie-data';
+import { getMovies } from '../data/movie-data';
 
 class Home extends Component {
   static async getInitialProps() {
