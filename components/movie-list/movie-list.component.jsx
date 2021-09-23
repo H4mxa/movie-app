@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Link from 'next/link';
 
 class MovieList extends Component {
   // shorten the description of movies list
@@ -13,12 +14,20 @@ class MovieList extends Component {
     return movies.map((movie, idx) => (
       <div key={idx} className="col-lg-4 col-md-6 mb-4">
         <div className="card h-100">
-          <a href="#">
-            <img className="card-img-top" src={movie.image} alt={movie.name} />
-          </a>
+          <Link href={`/movies/${movie.id}`}>
+            <a>
+              <img
+                className="card-img-top"
+                src={movie.image}
+                alt={movie.name}
+              />
+            </a>
+          </Link>
           <div className="card-body">
             <h4 className="card-title">
-              <a href="#">{movie.name}</a>
+              <Link href={`/movies/${movie.id}`}>
+                <a>{movie.name}</a>
+              </Link>
             </h4>
             <p className="card-text">{this.shorten(movie.description, 100)}</p>
           </div>
