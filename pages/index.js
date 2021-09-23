@@ -20,9 +20,9 @@ const Home = (props) => {
             </div>
 
             <div className="col-lg-9">
-              <Carousel />
+              <Carousel images={props.carouselImages} />
               <div className="row">
-                <MovieList movies={props.movies || []} />
+                <MovieList movies={props.movies} />
               </div>
             </div>
           </div>
@@ -37,8 +37,15 @@ export default Home;
 Home.getInitialProps = async () => {
   const movies = await getMovies();
 
+  const carouselImages = movies.map((movie) => ({
+    id: `image-${movie.id}`,
+    imageUrl: movie.image,
+    name: movie.name,
+  }));
+
   return {
     movies,
+    carouselImages,
   };
 };
 
