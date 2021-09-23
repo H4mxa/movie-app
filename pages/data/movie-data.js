@@ -34,4 +34,10 @@ const MovieData = [
   },
 ];
 
-export default MovieData;
+export const getMovies = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(MovieData);
+    }, 1000);
+  });
+};

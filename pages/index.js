@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 // --------- Components -------------
@@ -9,11 +9,17 @@ import MovieList from '../components/movie-list/movie-list.component';
 import Footer from '../components/footer/footer';
 
 // ---------- data ------------------
-import MovieData from './data/movie-data';
-
-const Movie_Data = MovieData;
+import { getMovies } from './data/movie-data';
 
 const Home = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(async () => {
+    // getMovies().then((movies) => setMovies(movies));
+    const resMovies = await getMovies();
+    setMovies(resMovies);
+  }, [movies]);
+
   return (
     <div>
       <Head>
@@ -52,7 +58,7 @@ const Home = () => {
             <div className="col-lg-9">
               <Carousel />
               <div className="row">
-                <MovieList movies={Movie_Data} />
+                <MovieList movies={movies} />
               </div>
             </div>
           </div>
