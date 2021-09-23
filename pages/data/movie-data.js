@@ -39,6 +39,6 @@ export const getMovies = () => {
     setTimeout(() => {
       resolve(MovieData);
       reject('Cannot fetch data!');
-    }, 1000);
+    }, 3000);
   });
 };

@@ -12,26 +12,34 @@ import Footer from '../components/footer/footer';
 import { getMovies } from './data/movie-data';
 
 class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      movies: [],
-      errorMessage: '',
+  static async getInitialProps() {
+    const movies = await getMovies();
+    return {
+      movies,
     };
   }
 
-  componentDidMount() {
-    getMovies()
-      .then((movies) => {
-        this.setState({ movies });
-      })
-      .catch((error) => {
-        this.setState({ errorMessage: error });
-      });
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     movies: [],
+  //     errorMessage: '',
+  //   };
+  // }
+
+  // Is called only on Client (Browser)
+  // componentDidMount() {
+  //   getMovies()
+  //     .then((movies) => {
+  //       this.setState({ movies });
+  //     })
+  //     .catch((error) => {
+  //       this.setState({ errorMessage: error });
+  //     });
+  // }
 
   render() {
-    const { movies, errorMessage } = this.state;
+    const { movies } = this.props;
     return (
       <div>
         <Head>
@@ -70,11 +78,6 @@ class Home extends Component {
               <div className="col-lg-9">
                 <Carousel />
                 <div className="row">
-                  {errorMessage && (
-                    <div className="alert alert-danger" role="alert">
-                      {errorMessage}
-                    </div>
-                  )}
                   <MovieList movies={movies} />
                 </div>
               </div>
