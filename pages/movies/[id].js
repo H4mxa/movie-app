@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
+
 import { getMovieById } from '../../action/movie-data';
 
 const Movies = (props) => {
-  debugger;
   const router = useRouter();
   const { id } = router.query;
   const { movie } = props;
