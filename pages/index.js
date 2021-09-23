@@ -7,7 +7,7 @@ import Carousel from '../components/carousel/carousel.component';
 import MovieList from '../components/movie-list/movie-list.component';
 
 // ---------- data ------------------
-import { getMovies } from '../data/movie-data';
+import { getMovies } from '../action/movie-data';
 
 const Home = (props) => {
   return (
