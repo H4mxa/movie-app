@@ -42,6 +42,32 @@ const MovieData = [
   },
 ];
 
+const CATEGORY_DATA = [
+  {
+    id: '1',
+    name: 'Darama',
+  },
+  {
+    id: '2',
+    name: 'Action',
+  },
+  {
+    id: '3',
+    name: 'Adventure',
+  },
+  {
+    id: '4',
+    name: 'Historical',
+  },
+];
+
+export const getCategories = () => {
+  return new Promise((resolve, reject) => {
+    const categories = CATEGORY_DATA.map((category) => category);
+    setTimeout(() => resolve(categories), 10);
+  });
+};
+
 export const getMovies = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
