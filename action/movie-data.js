@@ -49,7 +49,7 @@ const CATEGORY_DATA = [
   },
   {
     id: '2',
-    name: 'Action',
+    name: 'Music',
   },
   {
     id: '3',
@@ -58,6 +58,10 @@ const CATEGORY_DATA = [
   {
     id: '4',
     name: 'Historical',
+  },
+  {
+    id: '5',
+    name: 'Action',
   },
 ];
 
