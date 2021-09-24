@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 // --------- Components -------------
-import Navbar from '../components/navbar/navbar.component';
-import SideMenu from '../components/side-menu/side-menu.component';
-import Carousel from '../components/carousel/carousel.component';
-import MovieList from '../components/movie-list/movie-list.component';
+import Navbar from '../components/Navbar';
+import SideMenu from '../components/SideMenu';
+import Carousel from '../components/Carouse';
+import MovieList from '../components/MovieList';
 
 // ---------- data ------------------
 import { getMovies, getCategories } from '../action/movie-data';

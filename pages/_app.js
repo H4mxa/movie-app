@@ -1,8 +1,8 @@
 import App from 'next/app';
 import Head from 'next/head';
 
-import Navbar from '../components/navbar/navbar.component';
-import Footer from '../components/footer/footer';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 class MovieApp extends App {
   static async getInitialProps(appContext) {

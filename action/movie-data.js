@@ -63,8 +63,7 @@ const CATEGORY_DATA = [
 
 export const getCategories = () => {
   return new Promise((resolve, reject) => {
-    const categories = CATEGORY_DATA.map((category) => category);
-    setTimeout(() => resolve(categories), 10);
+    setTimeout(() => resolve(CATEGORY_DATA), 10);
   });
 };
 

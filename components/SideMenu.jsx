@@ -1,11 +1,12 @@
-import React from 'react';
+import Model from './Model';
 
 const SideMenu = (props) => {
   const { categories } = props;
   return (
     <div>
+      <Model />
       <h1 className="my-4">Categories</h1>
-      {categories.map((category, idx) => (
+      {categories.map((category) => (
         <div key={category.id} className="list-group">
           <a href="#" className="list-group-item">
             {category.name}
