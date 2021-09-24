@@ -1,4 +1,4 @@
-const Model = () => {
+const Model = (props) => {
   let closeButton = null;
 
   const submitModel = () => {
@@ -28,7 +28,7 @@ const Model = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Modal title
+                Create Movie
               </h5>
               <button
                 type="button"
@@ -39,7 +39,7 @@ const Model = () => {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div className="modal-body">...</div>
+            <div className="modal-body">{props.children}</div>
             <div className="modal-footer">
               <button
                 ref={(ele) => (closeButton = ele)}
