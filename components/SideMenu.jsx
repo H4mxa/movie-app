@@ -1,12 +1,12 @@
 import Model from './Model';
-import Form from './MovieCreateForm';
+import MovieCreateForm from './MovieCreateForm';
 
 const SideMenu = (props) => {
   const { categories } = props;
   return (
     <div>
       <Model>
-        <Form />
+        <MovieCreateForm />
       </Model>
       <h1 className="my-4">Categories</h1>
       {categories.map((category) => (
