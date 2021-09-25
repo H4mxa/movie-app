@@ -49,8 +49,10 @@ class MovieApp extends App {
 
         <style jsx>
           {`
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
             .base-page {
               padding-top: 80px;
+              background-color: #1b1b1b;
             }
           `}
         </style>
