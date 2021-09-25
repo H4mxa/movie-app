@@ -49,13 +49,15 @@ const Model = (props) => {
               >
                 Close
               </button>
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={submitModel}
-              >
-                Save changes
-              </button>
+              {props.hasSubmit && (
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={submitModel}
+                >
+                  Save changes
+                </button>
+              )}
             </div>
           </div>
         </div>

@@ -80,6 +80,17 @@ export const getMovies = () => {
   });
 };
 
+// this function will create our movie from movieCreateForm
+export const createMovie = (createMovieForm) => {
+  return new Promise((resolve, reject) => {
+    MovieData.push(createMovieForm);
+    setTimeout(() => {
+      resolve(MovieData);
+      reject('Cannot create movie!');
+    }, 0);
+  });
+};
+
 export const getMovieById = (id) => {
   return new Promise((resolve, reject) => {
     const movieIndex = MovieData.findIndex((movie) => movie.id === id);

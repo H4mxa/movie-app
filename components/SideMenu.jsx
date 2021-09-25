@@ -1,12 +1,20 @@
 import Model from './Model';
 import MovieCreateForm from './MovieCreateForm';
+import { createMovie } from '../action/movie-data';
 
 const SideMenu = (props) => {
   const { categories } = props;
+
+  const handleCreateMovie = (createMovieForm) => {
+    createMovie(createMovieForm).then((createMovieForm) => {
+      console.log(JSON.stringify(createMovieForm));
+    });
+  };
+
   return (
     <div>
-      <Model>
-        <MovieCreateForm />
+      <Model hasSubmit={false}>
+        <MovieCreateForm handleFormSubmit={handleCreateMovie} />
       </Model>
       <h1 className="my-4">Categories</h1>
       {categories.map((category) => (

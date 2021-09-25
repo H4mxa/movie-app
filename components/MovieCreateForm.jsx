@@ -1,10 +1,7 @@
 import { useState } from 'react';
 
-const MovieCreateForm = () => {
-  const [form, setForm] = useState({
-    name: 'Some Movie',
-    description: 'Some description',
-  });
+const MovieCreateForm = (props) => {
+  const [form, setForm] = useState({});
 
   const handleChange = (event) => {
     const target = event.target;
@@ -31,11 +28,15 @@ const MovieCreateForm = () => {
     });
   };
 
+  const submitForm = () => {
+    // calling here function to create movie from props
+    props.handleFormSubmit({ ...form });
+  };
+
   return (
     <form>
-      {JSON.stringify(form)}
       <div className="form-group">
-        <label for="name">Name</label>
+        <label htmlFor="name">Name</label>
         <input
           onChange={handleChange}
           value={form.name}
@@ -44,11 +45,11 @@ const MovieCreateForm = () => {
           className="form-control"
           id="name"
           aria-describedby="emailHelp"
-          placeholder="Lord of the Rings"
+          placeholder="name of movie..."
         />
       </div>
       <div className="form-group">
-        <label for="description">Description</label>
+        <label htmlFor="description">Description</label>
         <input
           onChange={handleChange}
           value={form.description}
@@ -56,11 +57,11 @@ const MovieCreateForm = () => {
           type="text"
           className="form-control"
           id="description"
-          placeholder="Somewhere in Middle-earth..."
+          placeholder="desciption..."
         />
       </div>
       <div className="form-group">
-        <label for="description">Rating</label>
+        <label htmlFor="description">Rating</label>
         <input
           onChange={handleChange}
           value={form.rating}
@@ -77,7 +78,7 @@ const MovieCreateForm = () => {
         </small>
       </div>
       <div className="form-group">
-        <label for="image">Image</label>
+        <label htmlFor="image">Image</label>
         <input
           onChange={handleChange}
           value={form.image}
@@ -89,7 +90,7 @@ const MovieCreateForm = () => {
         />
       </div>
       <div className="form-group">
-        <label for="cover">Cover</label>
+        <label htmlFor="cover">Cover</label>
         <input
           onChange={handleChange}
           value={form.cover}
@@ -101,7 +102,7 @@ const MovieCreateForm = () => {
         />
       </div>
       <div className="form-group">
-        <label for="longDesc">Long Description</label>
+        <label htmlFor="longDesc">Long Description</label>
         <textarea
           onChange={handleChange}
           value={form.longDesc}
@@ -112,7 +113,7 @@ const MovieCreateForm = () => {
         ></textarea>
       </div>
       <div className="form-group">
-        <label for="genre">Genre</label>
+        <label htmlFor="genre">Genre</label>
         <select
           onChange={handleGenreChange}
           multiple
@@ -126,6 +127,9 @@ const MovieCreateForm = () => {
           <option>action</option>
         </select>
       </div>
+      <button onClick={submitForm} type="button" className="btn btn-primary">
+        Create
+      </button>
     </form>
   );
 };
